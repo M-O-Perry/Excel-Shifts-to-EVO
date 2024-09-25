@@ -50,17 +50,19 @@ def is_float(element: any) -> bool:
     except ValueError:
         return False
     
-allShifts = getTimes(file)
 
 def addshift(employeeID, operation, sequence, hours):
-    send(["enter", 0.5])
-    send(["#"+str(employeeID),  "enter",0.5, "#"+str(operation),  "enter",0.5, "#"+str(sequence), "enter 8", "#"+str(hours), "enter", "alt s", 1, "enter", 1, "alt x", 1])
+    send(["enter", 0.25])
+    send(["#"+str(employeeID),  "enter",0.25, "#"+str(operation),  "enter",0.25, "#"+str(sequence), "enter 8", "#"+str(hours), "enter", "alt s", 0.25, "enter", 1, "alt x", 0.25])
 
 def addAllShifts(shifts):
     for shift in shifts:
         openTASProgram("WOF")
         addshift(employeeID, shift[0], shift[1], shift[2])
-
+        
+allShifts = getTimes(file)
 addAllShifts(allShifts)
 
+
+messagebox.showinfo("Shifts Added", "Shifts have been added to the system.")
 print("Shifts Added", "Shifts have been added to the system.")

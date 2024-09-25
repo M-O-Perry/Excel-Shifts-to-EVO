@@ -3,6 +3,6 @@ class TASFileReferences:
         
         self.references = {
             "MDB" : ("\\\\ERP\\dbamfg\\T7WOM.RWN", 30),
-            "WOF" : ("\\\\ERP\\dbamfg\\T7WOF.RWN", 2),
+            "WOF" : ("T7WOF", 2),
             
         }
